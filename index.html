@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godfred Kofi Owureku Frimpong | Portfolio</title>
+    <style>
+        :root {
+            --primary: #1A1A1D;
+            --secondary: #4E4E50;
+            --accent: #C3073F;
+            --bg-color: #F8F9FA;
+            --text-color: #333333;
+            --card-bg: #FFFFFF;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+        }
+        header h2 {
+            margin: 10px 0 0;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #95A5A6;
+        }
+        header p {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #BDC3C7;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skill-tag {
+            background-color: var(--secondary);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .project-card, .edu-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+        }
+        .project-card h4, .edu-card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .tech-stack {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Godfred Kofi Owureku Frimpong</h1>
+        <h2>Software Engineer | Google Cloud Architect | DevOps Engineer</h2>
+        <p>Greater Accra Region, Ghana</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h3>Professional Summary</h3>
+            <p>Dedicated Cloud Architect and DevOps Engineer specializing in scalable infrastructure, Infrastructure-as-Code (IaC), and continuous integration/continuous deployment (CI/CD) pipelines. Experienced in engineering advanced AI agentic systems and managing enterprise-grade database security. Proven track record in orchestrating complete infrastructure life-cycles and delivering robust, secure solutions.</p>
+        </section>
+
+        <section id="skills">
+            <h3>Technical Arsenal</h3>
+            <div class="skills-grid">
+                <span class="skill-tag">Google Cloud Platform (GCP)</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">CI/CD Automation</span>
+                <span class="skill-tag">Cloud Build</span>
+                <span class="skill-tag">Cloud Firestore</span>
+                <span class="skill-tag">API Integration</span>
+                <span class="skill-tag">AI Agentic Systems</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h3>Key Engineering Projects</h3>
+            
+            <div class="project-card">
+                <h4>Claw & Order — OmegaClaw Ecosystem</h4>
+                <span class="tech-stack">AI Engineering / System Security</span>
+                <p>Architected and deployed a stress-testing tool designed to evaluate AI agents. Focused on identifying and mitigating reward hacking and negative externalities to ensure safe, predictable operations within complex agentic ecosystems.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Deep Lab Infrastructure Management</h4>
+                <span class="tech-stack">GCP / Cloud Security</span>
+                <p>Successfully managed a comprehensive GCP infrastructure decommissioning project. Orchestrated the secure termination of virtual machines, executed encrypted database exports, and conducted strict security permission audits.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Enterprise Operations & API Integrations</h4>
+                <span class="tech-stack">Node.js / API / Frontend Development</span>
+                <p>Engineered an internal staff operations portal to streamline organizational workflows. Integrated the Africa's Talking API to establish robust bulk SMS and WhatsApp messaging pipelines, including configuring developer sandboxes for rigorous testing.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Commercial Web Architecture</h4>
+                <span class="tech-stack">Web Development / System Architecture</span>
+                <p>Led technical deployments and delivered multi-page digital architectures for major commercial entities, including Feenam Industries, eTranzact Ghana, and CH Group Ghana.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h3>Education & Certifications</h3>
+            
+            <div class="edu-card">
+                <h4>Certifications</h4>
+                <p>Multiple <strong>Google Cloud</strong> Certifications</p>
+            </div>
+
+            <div class="edu-card">
+                <h4>Academic Background</h4>
+                <p><strong>BSc in Logistics</strong> — Currently Pursuing</p>
+                <p><strong>BSc in Information Technology</strong> — Graduated 2024</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Godfred Frimpong. Engineered for scale.</p>
+    </footer>
+
+</body>
+</html>
