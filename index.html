@@ -3,187 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Godfred Kofi Owureku Frimpong | Portfolio</title>
+    <title>Godfred Kofi Owureku Frimpong | Cloud & DevOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1A1A1D;
-            --secondary: #4E4E50;
-            --accent: #C3073F;
-            --bg-color: #F8F9FA;
-            --text-color: #333333;
-            --card-bg: #FFFFFF;
+            --bg-dark: #050505;
+            --surface: #121212;
+            --surface-hover: #1a1a1a;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #ffffff;
+            --border: #262626;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
-        header {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 5rem 2rem;
-            text-align: center;
-            border-bottom: 5px solid var(--accent);
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            letter-spacing: 1px;
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
         }
-        header h2 {
-            margin: 10px 0 0;
-            font-size: 1.3rem;
-            font-weight: 300;
-            color: #95A5A6;
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
         }
-        header p {
-            margin-top: 15px;
-            font-size: 1rem;
-            color: #BDC3C7;
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
-        .container {
-            max-width: 1000px;
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
         }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: var(--surface);
+        }
+
+        /* Sections */
         section {
+            padding: 8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-header {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
             margin-bottom: 3rem;
         }
-        h3 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        .skills-grid {
+
+        /* Skills Grid */
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 1rem;
         }
-        .skill-tag {
-            background-color: var(--secondary);
-            color: #fff;
-            padding: 8px 18px;
+
+        .skill-badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
             border-radius: 4px;
             font-size: 0.95rem;
-            font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .project-card, .edu-card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease-in-out;
-        }
-        .project-card:hover {
-            transform: translateY(-3px);
-        }
-        .project-card h4, .edu-card h4 {
-            margin-top: 0;
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        .tech-stack {
-            font-size: 0.85rem;
-            color: var(--accent);
             font-weight: 600;
-            margin-bottom: 1rem;
-            display: block;
+            transition: all 0.3s ease;
         }
+
+        .skill-badge:hover {
+            background: var(--accent);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover {
+            background: var(--surface-hover);
+            transform: translateY(-5px);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            font-size: 0.75rem;
+            color: var(--bg-dark);
+            background: var(--text-muted);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Footer */
         footer {
+            padding: 3rem 5%;
             text-align: center;
-            padding: 2rem;
-            background-color: var(--primary);
-            color: #fff;
-            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
+        <div class="logo">GFRIM.</div>
+        <div class="nav-links">
+            <a href="#expertise">Expertise</a>
+            <a href="#projects">Architecture & Projects</a>
+            <a href="#background">Background</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="location-tag">
+            <span style="margin-right: 8px; color: #10B981;">●</span> Accra, Ghana / Remote
+        </div>
+        <br>
         <h1>Godfred Kofi Owureku Frimpong</h1>
-        <h2>Software Engineer | Google Cloud Architect | DevOps Engineer</h2>
-        <p>Greater Accra Region, Ghana</p>
+        <p>Software Engineer. Cloud Architect. DevOps Specialist. Engineering scalable infrastructure, secure CI/CD pipelines, and agentic AI systems.</p>
     </header>
 
-    <div class="container">
-        
-        <section id="about">
-            <h3>Professional Summary</h3>
-            <p>Dedicated Cloud Architect and DevOps Engineer specializing in scalable infrastructure, Infrastructure-as-Code (IaC), and continuous integration/continuous deployment (CI/CD) pipelines. Experienced in engineering advanced AI agentic systems and managing enterprise-grade database security. Proven track record in orchestrating complete infrastructure life-cycles and delivering robust, secure solutions.</p>
-        </section>
+    <section id="expertise">
+        <div class="section-header">Core Arsenal</div>
+        <div class="skills-container">
+            <div class="skill-badge">Google Cloud Platform</div>
+            <div class="skill-badge">Kubernetes</div>
+            <div class="skill-badge">Terraform / IaC</div>
+            <div class="skill-badge">Node.js</div>
+            <div class="skill-badge">Cloud Build & CI/CD</div>
+            <div class="skill-badge">Cloud Firestore</div>
+            <div class="skill-badge">API Architecture</div>
+            <div class="skill-badge">AI Systems Security</div>
+        </div>
+    </section>
 
-        <section id="skills">
-            <h3>Technical Arsenal</h3>
-            <div class="skills-grid">
-                <span class="skill-tag">Google Cloud Platform (GCP)</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">Terraform</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">CI/CD Automation</span>
-                <span class="skill-tag">Cloud Build</span>
-                <span class="skill-tag">Cloud Firestore</span>
-                <span class="skill-tag">API Integration</span>
-                <span class="skill-tag">AI Agentic Systems</span>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h3>Key Engineering Projects</h3>
+    <section id="projects">
+        <div class="section-header">Select Deployments</div>
+        <div class="projects-grid">
             
             <div class="project-card">
-                <h4>Claw & Order — OmegaClaw Ecosystem</h4>
-                <span class="tech-stack">AI Engineering / System Security</span>
-                <p>Architected and deployed a stress-testing tool designed to evaluate AI agents. Focused on identifying and mitigating reward hacking and negative externalities to ensure safe, predictable operations within complex agentic ecosystems.</p>
+                <h3>OmegaClaw: Claw & Order</h3>
+                <p>Engineered a robust stress-testing utility designed for evaluating AI agents. The system isolates and mitigates reward hacking and system vulnerabilities within complex agentic ecosystems.</p>
+                <div class="tech-stack">
+                    <span class="tech-item">AI Agentic Systems</span>
+                    <span class="tech-item">Security</span>
+                </div>
             </div>
 
             <div class="project-card">
-                <h4>Deep Lab Infrastructure Management</h4>
-                <span class="tech-stack">GCP / Cloud Security</span>
-                <p>Successfully managed a comprehensive GCP infrastructure decommissioning project. Orchestrated the secure termination of virtual machines, executed encrypted database exports, and conducted strict security permission audits.</p>
+                <h3>Deep Lab Infrastructure Decommissioning</h3>
+                <p>Orchestrated a highly secure, full-scale infrastructure teardown on GCP. Executed strict security permission audits, database exports, and systematic VM terminations.</p>
+                <div class="tech-stack">
+                    <span class="tech-item">GCP</span>
+                    <span class="tech-item">Cloud Security</span>
+                </div>
             </div>
 
             <div class="project-card">
-                <h4>Enterprise Operations & API Integrations</h4>
-                <span class="tech-stack">Node.js / API / Frontend Development</span>
-                <p>Engineered an internal staff operations portal to streamline organizational workflows. Integrated the Africa's Talking API to establish robust bulk SMS and WhatsApp messaging pipelines, including configuring developer sandboxes for rigorous testing.</p>
+                <h3>Enterprise Communications Integration</h3>
+                <p>Built a secure internal staff management portal integrating the Africa's Talking API. Deployed scalable bulk SMS and WhatsApp messaging pipelines via developer sandboxes.</p>
+                <div class="tech-stack">
+                    <span class="tech-item">Node.js</span>
+                    <span class="tech-item">API Integration</span>
+                </div>
             </div>
 
             <div class="project-card">
-                <h4>Commercial Web Architecture</h4>
-                <span class="tech-stack">Web Development / System Architecture</span>
-                <p>Led technical deployments and delivered multi-page digital architectures for major commercial entities, including Feenam Industries, eTranzact Ghana, and CH Group Ghana.</p>
-            </div>
-        </section>
-
-        <section id="education">
-            <h3>Education & Certifications</h3>
-            
-            <div class="edu-card">
-                <h4>Certifications</h4>
-                <p>Multiple <strong>Google Cloud</strong> Certifications</p>
+                <h3>Commercial Web Architecture</h3>
+                <p>Led technical strategy and multi-page web deployments for prominent commercial and financial institutions, ensuring high availability and seamless data flow.</p>
+                <div class="tech-stack">
+                    <span class="tech-item">eTranzact Ghana</span>
+                    <span class="tech-item">CH Group</span>
+                    <span class="tech-item">Feenam Industries</span>
+                </div>
             </div>
 
-            <div class="edu-card">
-                <h4>Academic Background</h4>
-                <p><strong>BSc in Logistics</strong> — Currently Pursuing</p>
-                <p><strong>BSc in Information Technology</strong> — Graduated 2024</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-    </div>
+    <section id="background">
+        <div class="section-header">Academics & Certifications</div>
+        <div style="max-width: 600px;">
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Google Cloud Certified Architect</h3>
+                <p style="color: var(--text-muted);">Multiple specialized credentials validating expertise in scalable cloud environments and operational security.</p>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">BSc, Logistics</h3>
+                <p style="color: var(--text-muted);">Currently Pursuing</p>
+            </div>
+            <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">BSc, Information Technology</h3>
+                <p style="color: var(--text-muted);">Graduated Class of 2024</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Godfred Frimpong. Engineered for scale.</p>
+        <p>&copy; 2026 GFRIM. Engineered for scale.</p>
     </footer>
 
 </body>
